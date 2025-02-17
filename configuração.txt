@@ -1,0 +1,10 @@
+git config --global user.name lariesther
+git config --gobal user.email larissafantinatti24@gmail.com
+
+abrir o terminal -ctrl + "
+
+criar um projeto React Native com Expo
+ npx create-expo-app@latest SilvinhaHealthApp --template blank
+
+ cd SilvinhaHealthApp
+ 
