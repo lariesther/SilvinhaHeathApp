@@ -7,4 +7,5 @@ criar um projeto React Native com Expo
  npx create-expo-app@latest SilvinhaHealthApp --template blank
 
  cd SilvinhaHealthApp
- 
+
+ npm i
