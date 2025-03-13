@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { SafeAreaView, StyleSheet, Text, View, TextInput } from 'react-native';
-
+import { SafeAreaView, StyleSheet, Text, View, TextInput, Touchable, TouchableOpacity } from 'react-native';
+import Ionicons from "@expo/vector-icons/Ionicons"
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
@@ -19,7 +19,7 @@ export default function App() {
            />
            </View>
            <View style={{Margintop: 25 }}>
-        <Text style={styles.subTitle}>Peso</Text>
+        <Text style={styles.label}>Peso</Text>
            <TextInput
            style={ styles.input}
            placeholder='Ex. 80.00'
@@ -27,6 +27,12 @@ export default function App() {
            />
            
           </View>
+          <TouchableOpacity style={styles.buttom}
+          onPress={ () => alert('AAAAAAAAAAAAA')}
+          >
+            <Ionicons name={"calculator-sharp"} size={24} color='#edf2f4' />
+            <Text style={styles.text}> Calcular</Text>
+          </TouchableOpacity>
      </View>
       <StatusBar style="light" />
     </SafeAreaView>
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
   },
   titleText:
   {
-    color: '#0080D0',
+    color: '#edf2f4',
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 20,
@@ -62,7 +68,7 @@ const styles = StyleSheet.create({
   subTitle: {
     textAlign:'center',
     fontSize: 24,
-    color: '#ef233c',
+    color: '#0080d0',
     fontWeight: 'bold',
     marginBottom: 40,
   },
@@ -74,12 +80,32 @@ const styles = StyleSheet.create({
   input:{
     height: 45,
     width:'100%',
+    paddingHorizontal: 10,
     fontSize: 18,
-    borderColor:'#ef233c',
-    borderWidth: 3,
+    borderColor:'#0080d0',
+    borderBottomWidth: 3,
     marginVertical: 5,
-    borderRadius: 30
+   
 
+  },
+  buttom:{
+    height:50,
+    width:"100%",
+    paddingVertical:15,
+    flexDirection:"row",
+    justifyContent:"center",
+    alignItems:"center",
+    backgroundColor:"#0080d0",
+    borderRadius:15,
+    marginTop:40,
+    margimBottom:10,
+  },
+
+  text:{ 
+    color:"#edf2f4",
+    fontSize:24,
+    fontWeight:"bold",
+    marginLeft:5
 
   }
 
