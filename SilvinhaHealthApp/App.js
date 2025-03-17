@@ -1,7 +1,13 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View, TextInput, Touchable, TouchableOpacity } from 'react-native';
 import Ionicons from "@expo/vector-icons/Ionicons"
 export default function App() {
+  const [height, setHeight] =useState(null);
+  const [weight, setweight] =useState(null);
+  const [imc, setImc] =useState(null);
+  const [texteButton,setTextButton] =useState("Calcular");
+  const [messageImc, setMessageImc]=useState("Preencha o peso e a altura")
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.titleBox}>
@@ -28,11 +34,17 @@ export default function App() {
            
           </View>
           <TouchableOpacity style={styles.buttom}
-          onPress={ () => alert('AAAAAAAAAAAAA')}
+          onPress={ () => alert('SEGREDO')}
           >
-            <Ionicons name={"calculator-sharp"} size={24} color='#edf2f4' />
+            <Ionicons name={"calculator-sharp"} size={22} color='#edf2f4' />
             <Text style={styles.text}> Calcular</Text>
           </TouchableOpacity>
+
+          <View style={styles.imcConteiner}>
+            <Text style={styles.imcText}>preencha o peso e a altura</Text>
+            <Text style={styles.imcResult}>666</Text>
+          </View>
+          
      </View>
       <StatusBar style="light" />
     </SafeAreaView>
@@ -89,7 +101,7 @@ const styles = StyleSheet.create({
 
   },
   buttom:{
-    height:50,
+    height:55,
     width:"100%",
     paddingVertical:15,
     flexDirection:"row",
@@ -103,10 +115,27 @@ const styles = StyleSheet.create({
 
   text:{ 
     color:"#edf2f4",
-    fontSize:24,
+    fontSize:20,
     fontWeight:"bold",
     marginLeft:5
 
+  },
+  imcConteiner: {
+    flex: 1,
+    alignItems:"center",
+    justifyContent:"center",
+    width:"100%"
+  },
+  imcText: {
+    fontSize:18,
+    color: "#0080d0",
+    fontWeight:"bold"
+  },
+
+  imcResult: {
+fontSize:48,
+color:'#0080d0',
+fontWeight:'bold'
   }
 
 });
